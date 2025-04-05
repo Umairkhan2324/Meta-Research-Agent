@@ -8,6 +8,7 @@ seaborn  # Enhanced visualizations
 fpdf  # PDF generation
 pydantic  # Structured output parsing (version compatible with langchain)
 reportlab
+langchain
 
 # Additional utilities
 numpy  # Required by statsmodels and matplotlib
