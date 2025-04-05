@@ -1,0 +1,393 @@
+2025-03-03 05:47:09,092 [INFO] main:576 - Starting LangGraph workflow with Tavily and OpenAI LLM...
+2025-03-03 05:54:31,045 [INFO] main:708 - Starting LangGraph workflow with Tavily and OpenAI LLM...
+2025-03-03 05:58:22,295 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+
+2025-03-03 05:58:22,296 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+
+2025-03-03 05:58:22,298 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 05:58:23,179 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-03-03 05:58:23,195 [ERROR] main:153 - PICO definition failed: Error code: 401 - {'error': {'message': 'Incorrect API key provided: YOUR_KEY*HERE. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-03-03 05:58:23,202 [INFO] main:166 - Searching literature...
+2025-03-03 05:58:24,548 [WARNING] main:190 - Search attempt 1 failed: The provided API key is invalid.. Retrying...
+2025-03-03 05:58:25,331 [WARNING] main:190 - Search attempt 2 failed: The provided API key is invalid.. Retrying...
+2025-03-03 05:58:26,145 [WARNING] main:190 - Search attempt 3 failed: The provided API key is invalid.. Retrying...
+2025-03-03 05:58:26,933 [WARNING] main:190 - Search attempt 4 failed: The provided API key is invalid.. Retrying...
+2025-03-03 05:58:27,730 [ERROR] main:212 - Literature search failed: The provided API key is invalid.
+2025-03-03 05:58:27,735 [INFO] main:220 - Screening articles...
+2025-03-03 05:58:27,738 [INFO] main:288 - Extracting data and assessing quality...
+2025-03-03 05:58:27,740 [INFO] main:428 - Human review of extracted data:
+2025-03-03 06:00:40,190 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:00:40,191 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:00:40,193 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 06:00:43,586 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:00:43,617 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rates, complication rates, and recovery times'}
+2025-03-03 06:00:43,620 [INFO] main:166 - Searching literature...
+2025-03-03 06:00:47,472 [INFO] main:209 - Found 5 articles from search.
+2025-03-03 06:00:47,476 [INFO] main:220 - Screening articles...
+2025-03-03 06:00:49,494 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:00:49,497 [INFO] main:262 - Excluded: Tumor necrosis factor (TNF) inhibitors for psoriatic arthritis
+2025-03-03 06:00:51,370 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:00:51,375 [INFO] main:262 - Excluded: Prepare For VA's Secure Sign-In Changes | Veterans Affairs
+2025-03-03 06:00:53,682 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:00:53,686 [INFO] main:262 - Excluded: Rehabilitación de la fractura de tobillo en adultos
+2025-03-03 06:00:55,661 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:00:55,668 [INFO] main:262 - Excluded: 50 Web Sign up/log in designs - Figma
+2025-03-03 06:00:57,596 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:00:57,605 [INFO] main:262 - Excluded: EMG biofeedback for the recovery of motor function after stroke
+2025-03-03 06:00:57,606 [WARNING] main:271 - No articles were included. Including the first 3 for manual review.
+2025-03-03 06:00:57,607 [INFO] main:275 - Selected 3 articles from 5 total.
+2025-03-03 06:00:57,612 [INFO] main:288 - Extracting data and assessing quality...
+2025-03-03 06:01:00,770 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:01:01,112 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:01:03,179 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:01:03,726 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:01:03,736 [INFO] main:365 - Successfully extracted data from 'Rehabilitación de la fractura de tobillo en adultos'
+2025-03-03 06:01:04,316 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:01:04,322 [INFO] main:365 - Successfully extracted data from 'Tumor necrosis factor (TNF) inhibitors for psoriatic arthritis'
+2025-03-03 06:01:06,169 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:01:06,175 [INFO] main:365 - Successfully extracted data from 'Prepare For VA's Secure Sign-In Changes | Veterans Affairs'
+2025-03-03 06:01:06,179 [INFO] main:428 - Human review of extracted data:
+2025-03-03 06:49:12,733 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:49:12,739 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:49:12,747 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 06:49:17,333 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:49:17,410 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rates, complication rates, recovery times, and quality of life post-surgery'}
+2025-03-03 06:49:17,413 [INFO] main:166 - Searching literature...
+2025-03-03 06:49:26,121 [INFO] main:209 - Found 0 articles from search.
+2025-03-03 06:49:26,131 [INFO] main:220 - Screening articles...
+2025-03-03 06:49:26,136 [INFO] main:288 - Extracting data and assessing quality...
+2025-03-03 06:49:26,136 [INFO] main:429 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 06:49:49,580 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:49:49,580 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:49:49,590 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 06:49:52,437 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:49:52,458 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rates, complication rates, and recovery times'}
+2025-03-03 06:49:52,460 [INFO] main:166 - Searching literature...
+2025-03-03 06:49:55,109 [INFO] main:209 - Found 5 articles from search.
+2025-03-03 06:49:55,109 [INFO] main:220 - Screening articles...
+2025-03-03 06:49:57,023 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:49:57,031 [INFO] main:262 - Excluded: Tumor necrosis factor (TNF) inhibitors for psoriatic arthritis
+2025-03-03 06:49:59,053 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:49:59,064 [INFO] main:262 - Excluded: Prepare For VA's Secure Sign-In Changes | Veterans Affairs
+2025-03-03 06:50:01,167 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:01,174 [INFO] main:262 - Excluded: Rehabilitación de la fractura de tobillo en adultos
+2025-03-03 06:50:02,774 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:02,782 [INFO] main:262 - Excluded: 50 Web Sign up/log in designs - Figma
+2025-03-03 06:50:05,233 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:05,238 [INFO] main:262 - Excluded: EMG biofeedback for the recovery of motor function after stroke
+2025-03-03 06:50:05,240 [WARNING] main:271 - No articles were included. Including the first 3 for manual review.
+2025-03-03 06:50:05,240 [INFO] main:275 - Selected 3 articles from 5 total.
+2025-03-03 06:50:05,242 [INFO] main:288 - Extracting data and assessing quality...
+2025-03-03 06:50:08,206 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:08,552 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:08,979 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:11,155 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:11,164 [INFO] main:365 - Successfully extracted data from 'Rehabilitación de la fractura de tobillo en adultos'
+2025-03-03 06:50:11,863 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:11,872 [INFO] main:365 - Successfully extracted data from 'Prepare For VA's Secure Sign-In Changes | Veterans Affairs'
+2025-03-03 06:50:12,423 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:50:12,428 [INFO] main:365 - Successfully extracted data from 'Tumor necrosis factor (TNF) inhibitors for psoriatic arthritis'
+2025-03-03 06:50:12,433 [INFO] main:429 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 06:55:09,711 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:55:09,716 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:55:09,720 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 06:55:13,269 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:13,353 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rates, complication rates, recovery time, and quality of life'}
+2025-03-03 06:55:13,353 [INFO] main:166 - Searching literature...
+2025-03-03 06:55:17,258 [INFO] main:230 - Found 5 articles from search.
+2025-03-03 06:55:17,258 [INFO] main:241 - Screening articles...
+2025-03-03 06:55:19,573 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:19,581 [INFO] main:283 - Excluded: Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...
+2025-03-03 06:55:21,654 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:21,658 [INFO] main:283 - Excluded: Endoscopic versus open treatment for sagittal craniosynostosis: a ...
+2025-03-03 06:55:23,371 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:23,377 [INFO] main:283 - Excluded: Endoscopic endonasal transsphenoidal approach to large and giant ...
+2025-03-03 06:55:26,529 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:26,537 [INFO] main:283 - Excluded: Anaesthesia for Endoscopic Endonasal Transphenoidal Resection of ...
+2025-03-03 06:55:30,300 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:30,306 [INFO] main:283 - Excluded: Microscopic versus endoscopic approaches for craniopharyngiomas ...
+2025-03-03 06:55:30,306 [WARNING] main:292 - No articles were included. Including the first 3 for manual review.
+2025-03-03 06:55:30,311 [INFO] main:296 - Selected 3 articles from 5 total.
+2025-03-03 06:55:30,313 [INFO] main:309 - Extracting data and assessing quality...
+2025-03-03 06:55:33,327 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:33,391 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:34,532 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:35,941 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:35,947 [INFO] main:386 - Successfully extracted data from 'Endoscopic versus open treatment for sagittal craniosynostosis: a ...'
+2025-03-03 06:55:37,527 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:37,533 [INFO] main:386 - Successfully extracted data from 'Endoscopic endonasal transsphenoidal approach to large and giant ...'
+2025-03-03 06:55:38,067 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:38,074 [INFO] main:386 - Successfully extracted data from 'Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...'
+2025-03-03 06:55:38,081 [INFO] main:450 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 06:55:52,930 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:55:52,933 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:55:52,938 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 06:55:56,046 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:55:56,092 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rates, complication rates, and recovery times'}
+2025-03-03 06:55:56,101 [INFO] main:166 - Searching literature...
+2025-03-03 06:55:59,734 [INFO] main:230 - Found 5 articles from search.
+2025-03-03 06:55:59,741 [INFO] main:241 - Screening articles...
+2025-03-03 06:56:03,021 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:03,021 [INFO] main:283 - Excluded: Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...
+2025-03-03 06:56:05,381 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:05,383 [INFO] main:283 - Excluded: Endoscopic versus open treatment for sagittal craniosynostosis: a ...
+2025-03-03 06:56:07,282 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:07,294 [INFO] main:283 - Excluded: Endoscopic endonasal transsphenoidal approach to large and giant ...
+2025-03-03 06:56:10,097 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:10,111 [INFO] main:283 - Excluded: Anaesthesia for Endoscopic Endonasal Transphenoidal Resection of ...
+2025-03-03 06:56:13,301 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:13,306 [INFO] main:283 - Excluded: Microscopic versus endoscopic approaches for craniopharyngiomas ...
+2025-03-03 06:56:13,306 [WARNING] main:292 - No articles were included. Including the first 3 for manual review.
+2025-03-03 06:56:13,312 [INFO] main:296 - Selected 3 articles from 5 total.
+2025-03-03 06:56:13,315 [INFO] main:309 - Extracting data and assessing quality...
+2025-03-03 06:56:16,297 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:17,360 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:17,402 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:19,627 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:19,635 [INFO] main:386 - Successfully extracted data from 'Endoscopic versus open treatment for sagittal craniosynostosis: a ...'
+2025-03-03 06:56:20,587 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:20,587 [INFO] main:386 - Successfully extracted data from 'Endoscopic endonasal transsphenoidal approach to large and giant ...'
+2025-03-03 06:56:20,945 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:56:20,946 [INFO] main:386 - Successfully extracted data from 'Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...'
+2025-03-03 06:56:20,954 [INFO] main:450 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 06:59:20,710 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:59:20,718 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 06:59:20,724 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 06:59:23,834 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:23,902 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rate, complication rates, recovery time, and quality of life'}
+2025-03-03 06:59:23,905 [INFO] main:166 - Searching literature...
+2025-03-03 06:59:26,726 [INFO] main:230 - Found 5 articles from search.
+2025-03-03 06:59:26,732 [INFO] main:241 - Screening articles...
+2025-03-03 06:59:29,424 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:29,427 [INFO] main:283 - Excluded: Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...
+2025-03-03 06:59:32,528 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:32,548 [INFO] main:283 - Excluded: Endoscopic versus open treatment for sagittal craniosynostosis: a ...
+2025-03-03 06:59:35,014 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:35,027 [INFO] main:280 - Included: Endoscopic endonasal transsphenoidal approach to large and giant ...
+2025-03-03 06:59:37,750 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:37,761 [INFO] main:283 - Excluded: Anaesthesia for Endoscopic Endonasal Transphenoidal Resection of ...
+2025-03-03 06:59:40,734 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:40,750 [INFO] main:283 - Excluded: Microscopic versus endoscopic approaches for craniopharyngiomas ...
+2025-03-03 06:59:40,750 [INFO] main:296 - Selected 1 articles from 5 total.
+2025-03-03 06:59:40,758 [INFO] main:309 - Extracting data and assessing quality...
+2025-03-03 06:59:43,688 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:46,275 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 06:59:46,283 [INFO] main:386 - Successfully extracted data from 'Endoscopic endonasal transsphenoidal approach to large and giant ...'
+2025-03-03 06:59:46,293 [INFO] main:450 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 07:03:15,244 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 07:03:15,252 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 07:03:15,252 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 07:03:18,840 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:18,857 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rates, complication rates, and recovery times'}
+2025-03-03 07:03:18,862 [INFO] main:166 - Searching literature...
+2025-03-03 07:03:21,556 [INFO] main:230 - Found 5 articles from search.
+2025-03-03 07:03:21,564 [INFO] main:241 - Screening articles...
+2025-03-03 07:03:24,165 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:24,171 [INFO] main:283 - Excluded: Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...
+2025-03-03 07:03:26,316 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:26,323 [INFO] main:283 - Excluded: Endoscopic versus open treatment for sagittal craniosynostosis: a ...
+2025-03-03 07:03:28,158 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:28,163 [INFO] main:283 - Excluded: Endoscopic endonasal transsphenoidal approach to large and giant ...
+2025-03-03 07:03:30,512 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:30,519 [INFO] main:283 - Excluded: Anaesthesia for Endoscopic Endonasal Transphenoidal Resection of ...
+2025-03-03 07:03:33,350 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:33,356 [INFO] main:283 - Excluded: Microscopic versus endoscopic approaches for craniopharyngiomas ...
+2025-03-03 07:03:33,357 [WARNING] main:292 - No articles were included. Including the first 3 for manual review.
+2025-03-03 07:03:33,360 [INFO] main:296 - Selected 3 articles from 5 total.
+2025-03-03 07:03:33,367 [INFO] main:309 - Extracting data and assessing quality...
+2025-03-03 07:03:36,358 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:37,688 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:39,267 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:39,269 [INFO] main:386 - Successfully extracted data from 'Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...'
+2025-03-03 07:03:40,448 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:41,584 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:41,616 [INFO] main:386 - Successfully extracted data from 'Endoscopic endonasal transsphenoidal approach to large and giant ...'
+2025-03-03 07:03:44,033 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:03:44,042 [INFO] main:386 - Successfully extracted data from 'Endoscopic versus open treatment for sagittal craniosynostosis: a ...'
+2025-03-03 07:03:44,053 [INFO] main:450 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 07:18:18,702 [INFO] main:76 - Using existing topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 07:18:18,710 [INFO] main:84 - User provided topic: Outcomes of Endoscopic vs. Open Surgical Approaches for Pituitary Tumors
+2025-03-03 07:18:18,718 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 07:18:22,627 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:22,709 [INFO] main:150 - PICO defined: {'population': 'Patients with pituitary tumors undergoing surgical treatment', 'intervention': 'Endoscopic surgical approach', 'comparison': 'Open surgical approach', 'outcome': 'Surgical success rates, complication rates, recovery time, and quality of life'}
+2025-03-03 07:18:22,719 [INFO] main:166 - Searching literature...
+2025-03-03 07:18:26,399 [INFO] main:230 - Found 5 articles from search.
+2025-03-03 07:18:26,399 [INFO] main:241 - Screening articles...
+2025-03-03 07:18:28,464 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:28,464 [INFO] main:283 - Excluded: Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...
+2025-03-03 07:18:29,821 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:29,825 [INFO] main:283 - Excluded: Endoscopic versus open treatment for sagittal craniosynostosis: a ...
+2025-03-03 07:18:33,027 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:33,034 [INFO] main:283 - Excluded: Endoscopic endonasal transsphenoidal approach to large and giant ...
+2025-03-03 07:18:35,231 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:35,240 [INFO] main:283 - Excluded: Anaesthesia for Endoscopic Endonasal Transphenoidal Resection of ...
+2025-03-03 07:18:37,722 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:37,727 [INFO] main:283 - Excluded: Microscopic versus endoscopic approaches for craniopharyngiomas ...
+2025-03-03 07:18:37,727 [WARNING] main:292 - No articles were included. Including the first 3 for manual review.
+2025-03-03 07:18:37,732 [INFO] main:296 - Selected 3 articles from 5 total.
+2025-03-03 07:18:37,742 [INFO] main:309 - Extracting data and assessing quality...
+2025-03-03 07:18:40,866 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:40,868 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:41,674 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:42,900 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:42,907 [INFO] main:386 - Successfully extracted data from 'Endoscopic versus open treatment for sagittal craniosynostosis: a ...'
+2025-03-03 07:18:43,823 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:43,831 [INFO] main:386 - Successfully extracted data from 'Endoscopic Endonasal Transsphenoidal Resection of Pituitary Adenomas in ...'
+2025-03-03 07:18:43,857 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:18:43,865 [INFO] main:386 - Successfully extracted data from 'Endoscopic endonasal transsphenoidal approach to large and giant ...'
+2025-03-03 07:18:43,872 [INFO] main:450 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 07:19:03,035 [ERROR] main:473 - Insufficient valid data for meta-analysis. Only 0 valid studies.
+2025-03-03 07:19:03,037 [ERROR] main:507 - Cannot generate visualizations due to meta-analysis failure.
+2025-03-03 07:19:03,039 [INFO] main:542 - Drafting report with LLM...
+2025-03-03 07:20:58,004 [INFO] main:76 - Using existing topic: Impact of Intraoperative Neuromonitoring on Functional Preservation in Brain Tumor Resection
+2025-03-03 07:20:58,005 [INFO] main:84 - User provided topic: Impact of Intraoperative Neuromonitoring on Functional Preservation in Brain Tumor Resection
+2025-03-03 07:20:58,011 [INFO] main:94 - Defining PICO with LLM...
+2025-03-03 07:21:00,852 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:00,888 [INFO] main:150 - PICO defined: {'population': 'Patients undergoing brain tumor resection', 'intervention': 'Intraoperative neuromonitoring', 'comparison': 'Brain tumor resection without intraoperative neuromonitoring', 'outcome': 'Functional preservation post-surgery'}
+2025-03-03 07:21:00,893 [INFO] main:166 - Searching literature...
+2025-03-03 07:21:09,557 [WARNING] main:216 - No relevant neurosurgical articles found, using mock data
+2025-03-03 07:21:09,561 [INFO] main:230 - Found 3 articles from search.
+2025-03-03 07:21:09,575 [INFO] main:241 - Screening articles...
+2025-03-03 07:21:11,670 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:11,688 [INFO] main:283 - Excluded: Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors
+2025-03-03 07:21:13,510 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:13,516 [INFO] main:283 - Excluded: Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas
+2025-03-03 07:21:15,332 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:15,336 [INFO] main:283 - Excluded: Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes
+2025-03-03 07:21:15,336 [WARNING] main:292 - No articles were included. Including the first 3 for manual review.
+2025-03-03 07:21:15,337 [INFO] main:296 - Selected 3 articles from 3 total.
+2025-03-03 07:21:15,340 [INFO] main:309 - Extracting data and assessing quality...
+2025-03-03 07:21:17,741 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:17,926 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:20,944 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:20,958 [INFO] main:386 - Successfully extracted data from 'Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors'
+2025-03-03 07:21:21,257 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:21,607 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:21,613 [INFO] main:386 - Successfully extracted data from 'Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes'
+2025-03-03 07:21:23,888 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:21:23,892 [INFO] main:386 - Successfully extracted data from 'Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas'
+2025-03-03 07:21:23,895 [INFO] main:450 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 07:21:32,280 [ERROR] main:473 - Insufficient valid data for meta-analysis. Only 0 valid studies.
+2025-03-03 07:21:32,282 [ERROR] main:507 - Cannot generate visualizations due to meta-analysis failure.
+2025-03-03 07:21:32,283 [INFO] main:543 - Drafting report with LLM...
+2025-03-03 07:21:32,284 [INFO] main:620 - Human review of report - will be handled by Streamlit
+2025-03-03 07:21:32,288 [INFO] main:627 - Draft saved as report_draft.md. Please review.
+2025-03-03 07:25:20,273 [INFO] main:78 - Using existing topic: Management of Cerebral Vasospasm Following Subarachnoid Hemorrhage
+2025-03-03 07:25:20,275 [INFO] main:86 - User provided topic: Management of Cerebral Vasospasm Following Subarachnoid Hemorrhage
+2025-03-03 07:25:20,277 [INFO] main:96 - Defining PICO with LLM...
+2025-03-03 07:25:23,663 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:25:23,692 [INFO] main:152 - PICO defined: {'population': 'Patients with subarachnoid hemorrhage experiencing cerebral vasospasm', 'intervention': 'Endovascular treatment or pharmacological therapy', 'comparison': 'Conventional management or no treatment', 'outcome': 'Reduction in cerebral vasospasm and improved neurological outcomes'}
+2025-03-03 07:25:23,694 [INFO] main:168 - Searching literature...
+2025-03-03 07:25:27,118 [INFO] main:232 - Found 1 articles from search.
+2025-03-03 07:25:27,121 [INFO] main:243 - Screening articles...
+2025-03-03 07:25:29,219 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:25:29,228 [INFO] main:285 - Excluded: Endoscopic transpapillary gallbladder stenting vs percutaneous ... - PubMed
+2025-03-03 07:25:29,229 [WARNING] main:294 - No articles were included. Including the first 3 for manual review.
+2025-03-03 07:25:29,232 [INFO] main:298 - Selected 1 articles from 1 total.
+2025-03-03 07:25:29,235 [INFO] main:311 - Extracting data and assessing quality...
+2025-03-03 07:25:32,559 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:25:36,552 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:25:36,565 [INFO] main:388 - Successfully extracted data from 'Endoscopic transpapillary gallbladder stenting vs percutaneous ... - PubMed'
+2025-03-03 07:25:36,569 [INFO] main:452 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 07:26:13,514 [INFO] main:78 - Using existing topic: Role of Decompressive Craniectomy in Traumatic Brain Injury: Timing and Indications
+2025-03-03 07:26:13,515 [INFO] main:86 - User provided topic: Role of Decompressive Craniectomy in Traumatic Brain Injury: Timing and Indications
+2025-03-03 07:26:13,518 [INFO] main:96 - Defining PICO with LLM...
+2025-03-03 07:26:15,621 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:15,641 [INFO] main:152 - PICO defined: {'population': 'Patients with traumatic brain injury', 'intervention': 'Decompressive craniectomy', 'comparison': 'Conservative management or standard medical treatment', 'outcome': 'Neurological outcomes, mortality, and functional recovery'}
+2025-03-03 07:26:15,645 [INFO] main:168 - Searching literature...
+2025-03-03 07:26:22,787 [WARNING] main:218 - No relevant neurosurgical articles found, using mock data
+2025-03-03 07:26:22,792 [INFO] main:232 - Found 3 articles from search.
+2025-03-03 07:26:22,797 [INFO] main:243 - Screening articles...
+2025-03-03 07:26:25,030 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:25,041 [INFO] main:285 - Excluded: Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors
+2025-03-03 07:26:26,867 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:26,874 [INFO] main:285 - Excluded: Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas
+2025-03-03 07:26:28,800 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:28,814 [INFO] main:285 - Excluded: Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes
+2025-03-03 07:26:28,815 [WARNING] main:294 - No articles were included. Including the first 3 for manual review.
+2025-03-03 07:26:28,816 [INFO] main:298 - Selected 3 articles from 3 total.
+2025-03-03 07:26:28,818 [INFO] main:311 - Extracting data and assessing quality...
+2025-03-03 07:26:31,964 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:32,502 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:35,641 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:35,648 [INFO] main:388 - Successfully extracted data from 'Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas'
+2025-03-03 07:26:35,729 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:35,731 [INFO] main:388 - Successfully extracted data from 'Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes'
+2025-03-03 07:26:36,075 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:38,199 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:26:38,208 [INFO] main:388 - Successfully extracted data from 'Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors'
+2025-03-03 07:26:38,214 [INFO] main:452 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 07:26:45,755 [INFO] main:463 - Performing meta-analysis...
+2025-03-03 07:26:45,756 [INFO] main:498 - Found 2 valid studies for meta-analysis.
+2025-03-03 07:26:45,756 [INFO] main:555 - Meta-analysis completed. Pooled effect: 0.514 [95% CI: 0.202, 0.827]
+2025-03-03 07:26:46,515 [INFO] main:676 - Drafting report with LLM...
+2025-03-03 07:27:06,227 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:27:06,230 [INFO] main:748 - Report drafted.
+2025-03-03 07:27:06,232 [INFO] main:753 - Human review of report - will be handled by Streamlit
+2025-03-03 07:27:06,235 [INFO] main:760 - Draft saved as report_draft.md. Please review.
+2025-03-03 07:27:22,806 [INFO] main:861 - Enhanced final report saved as final_report.pdf
+2025-03-03 07:31:59,830 [INFO] main:78 - Using existing topic: Role of Decompressive Craniectomy in Traumatic Brain Injury: Timing and Indications
+2025-03-03 07:31:59,831 [INFO] main:86 - User provided topic: Role of Decompressive Craniectomy in Traumatic Brain Injury: Timing and Indications
+2025-03-03 07:31:59,832 [INFO] main:96 - Defining PICO with LLM...
+2025-03-03 07:32:02,788 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:02,816 [INFO] main:152 - PICO defined: {'population': 'Patients with traumatic brain injury', 'intervention': 'Decompressive craniectomy', 'comparison': 'Conservative management or standard medical treatment', 'outcome': 'Neurological outcomes, mortality, and functional recovery'}
+2025-03-03 07:32:02,819 [INFO] main:168 - Searching literature...
+2025-03-03 07:32:08,812 [WARNING] main:218 - No relevant neurosurgical articles found, using mock data
+2025-03-03 07:32:08,812 [INFO] main:232 - Found 3 articles from search.
+2025-03-03 07:32:08,814 [INFO] main:243 - Screening articles...
+2025-03-03 07:32:10,657 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:10,673 [INFO] main:285 - Excluded: Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors
+2025-03-03 07:32:12,321 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:12,332 [INFO] main:285 - Excluded: Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas
+2025-03-03 07:32:13,959 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:13,965 [INFO] main:285 - Excluded: Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes
+2025-03-03 07:32:13,966 [WARNING] main:294 - No articles were included. Including the first 3 for manual review.
+2025-03-03 07:32:13,967 [INFO] main:298 - Selected 3 articles from 3 total.
+2025-03-03 07:32:13,968 [INFO] main:311 - Extracting data and assessing quality...
+2025-03-03 07:32:16,977 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:17,274 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:20,331 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:20,333 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:20,337 [INFO] main:388 - Successfully extracted data from 'Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes'
+2025-03-03 07:32:20,338 [INFO] main:388 - Successfully extracted data from 'Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas'
+2025-03-03 07:32:23,079 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:26,436 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:26,443 [INFO] main:388 - Successfully extracted data from 'Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors'
+2025-03-03 07:32:26,445 [INFO] main:452 - Human review of extracted data - will be handled by Streamlit
+2025-03-03 07:32:35,350 [INFO] main:463 - Performing meta-analysis...
+2025-03-03 07:32:35,350 [INFO] main:498 - Found 2 valid studies for meta-analysis.
+2025-03-03 07:32:35,351 [INFO] main:555 - Meta-analysis completed. Pooled effect: 0.569 [95% CI: 0.131, 1.007]
+2025-03-03 07:32:36,504 [INFO] main:843 - Drafting report with LLM...
+2025-03-03 07:32:58,390 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 07:32:58,402 [INFO] main:972 - Report drafted with specialty-specific content.
+2025-03-03 07:32:58,403 [INFO] main:977 - Human review of report - will be handled by Streamlit
+2025-03-03 07:32:58,405 [INFO] main:984 - Draft saved as report_draft.md. Please review.
+2025-03-03 07:34:14,495 [INFO] main:1085 - Enhanced final report saved as final_report.pdf
+2025-03-03 13:01:24,590 [INFO] main:78 - Using existing topic: Applications of Augmented Reality in Neurosurgical Planning and Execution
+2025-03-03 13:01:24,594 [INFO] main:86 - User provided topic: Applications of Augmented Reality in Neurosurgical Planning and Execution
+2025-03-03 13:01:24,597 [INFO] main:96 - Defining PICO with LLM...
+2025-03-03 13:01:49,654 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:01:49,736 [INFO] main:152 - PICO defined: {'population': 'patients undergoing neurosurgical procedures', 'intervention': 'use of augmented reality in neurosurgical planning and execution', 'comparison': 'traditional neurosurgical planning and execution methods', 'outcome': 'improvement in surgical accuracy and patient outcomes'}
+2025-03-03 13:01:49,750 [INFO] main:168 - Searching literature...
+2025-03-03 13:01:58,700 [WARNING] main:218 - No relevant neurosurgical articles found, using mock data
+2025-03-03 13:01:58,704 [INFO] main:232 - Found 3 articles from search.
+2025-03-03 13:01:58,708 [INFO] main:243 - Screening articles...
+2025-03-03 13:02:22,478 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:22,484 [INFO] main:285 - Excluded: Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors
+2025-03-03 13:02:24,276 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:24,278 [INFO] main:285 - Excluded: Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas
+2025-03-03 13:02:25,783 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:25,783 [INFO] main:285 - Excluded: Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes
+2025-03-03 13:02:25,790 [WARNING] main:294 - No articles were included. Including the first 3 for manual review.
+2025-03-03 13:02:25,790 [INFO] main:298 - Selected 3 articles from 3 total.
+2025-03-03 13:02:25,794 [INFO] main:311 - Extracting data and assessing quality...
+2025-03-03 13:02:28,517 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:31,873 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:31,882 [INFO] main:388 - Successfully extracted data from 'Endoscopic versus Microscopic Transsphenoidal Surgery for Pituitary Tumors'
+2025-03-03 13:02:49,563 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:49,563 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:52,325 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:52,337 [INFO] main:388 - Successfully extracted data from 'Meta-analysis of Endoscopic versus Microscopic Pituitary Surgery Outcomes'
+2025-03-03 13:02:52,635 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-03 13:02:52,641 [INFO] main:388 - Successfully extracted data from 'Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas'
+2025-03-03 13:02:52,662 [INFO] main:452 - Human review of extracted data - will be handled by Streamlit

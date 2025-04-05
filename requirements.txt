@@ -1,0 +1,16 @@
+# Core dependencies
+langgraph  # Latest stable version as of recent updates
+langchain-openai  # For OpenAI LLM integration
+tavily-python  # Tavily API client
+statsmodels  # For meta-analysis
+matplotlib  # For visualizations
+seaborn  # Enhanced visualizations
+fpdf  # PDF generation
+pydantic  # Structured output parsing (version compatible with langchain)
+reportlab
+
+# Additional utilities
+numpy  # Required by statsmodels and matplotlib
+requests
+streamlit
+python-dotenv  # For loading environment variables from .env file
