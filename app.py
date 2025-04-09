@@ -332,8 +332,6 @@ def main():
         for error in st.session_state.state['errors']:
             st.write(f"- {error}")
 
-    # Add this to app.py in the human_review_extraction section to improve data validation guidance
-
     # Display extracted data with warnings and validation guidance
     if st.session_state.state['stage'] == 'extraction_completed':
         st.header("Data Extraction Results")
