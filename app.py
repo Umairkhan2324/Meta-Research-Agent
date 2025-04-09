@@ -361,8 +361,9 @@ def main():
                         break
                 
                 if original_text:
-                    with st.expander("Original Abstract (Reference)"):
-                        st.write(original_text)
+                    st.subheader("Original Abstract")
+                    st.info(original_text)
+                    st.markdown("---")
                 
                 # Show extracted data with potential issue highlights
                 st.subheader("Extracted Data")
