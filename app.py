@@ -162,7 +162,7 @@ def main():
                 if st.checkbox(f"Edit study {i+1} data", key=f"edit_{i}"):
                     with st.form(key=f"edit_form_{i}"):
                         new_patients = st.number_input("Patients", 
-                                                      value=float(data.get('patients', 0)),
+                                                      value=int(data.get('patients', 0)),
                                                       min_value=0)
                         new_intervention = st.number_input("Intervention outcome",
                                                           value=float(data.get('intervention_outcome', 0)))
