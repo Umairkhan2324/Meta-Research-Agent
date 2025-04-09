@@ -332,5 +332,107 @@ def main():
         for error in st.session_state.state['errors']:
             st.write(f"- {error}")
 
+    # Add this to app.py in the human_review_extraction section to improve data validation guidance
+
+    # Display extracted data with warnings and validation guidance
+    if st.session_state.state['stage'] == 'extraction_completed':
+        st.header("Data Extraction Results")
+        
+        # Add explicit validation instructions
+        st.warning("**IMPORTANT: Please carefully review the extracted data below before approving.**\n\n" + 
+                  "Check for:\n" + 
+                  "- Accuracy of numerical values (patient counts, outcomes)\n" +
+                  "- Appropriateness of effect size calculations\n" +
+                  "- Plausibility of variance values (smaller values mean higher precision)\n" +
+                  "- Quality assessment accuracy\n" +
+                  "- Missing data that might affect meta-analysis")
+        
+        # Display each study with improved feedback
+        for i, study in enumerate(st.session_state.state["extracted_data"]):
+            with st.expander(f"Study {i+1}: {study['title']}", expanded=i==0):
+                
+                # Display original abstract for reference
+                st.subheader("Study Information")
+                st.write(f"**URL:** {study.get('url', 'Not available')}")
+                
+                # Find the original article text if available
+                original_text = ""
+                for article in st.session_state.state.get("included_articles", []):
+                    if article.get("title") == study.get("title"):
+                        original_text = article.get("snippet", "")
+                        break
+                
+                if original_text:
+                    with st.expander("Original Abstract (Reference)"):
+                        st.write(original_text)
+                
+                # Show extracted data with potential issue highlights
+                st.subheader("Extracted Data")
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    st.write("**Patients:** ", study["data"].get("patients", 0))
+                    st.write("**Intervention Outcome:** ", study["data"].get("intervention_outcome", 0))
+                    st.write("**Comparison Outcome:** ", study["data"].get("comparison_outcome", 0))
+                    
+                    # Flag potentially problematic effect sizes
+                    effect_size = study["data"].get("effect_size", 0)
+                    if abs(effect_size) > 2:
+                        st.write("**Effect Size:** ", f"{effect_size} ⚠️ (Unusually large)")
+                    else:
+                        st.write("**Effect Size:** ", effect_size)
+                    
+                    # Flag potentially problematic variances
+                    variance = study["data"].get("variance", 0)
+                    if variance <= 0:
+                        st.write("**Variance:** ", f"{variance} ⚠️ (Invalid - must be positive)")
+                    elif variance > 1:
+                        st.write("**Variance:** ", f"{variance} ⚠️ (Unusually large)")
+                    else:
+                        st.write("**Variance:** ", variance)
+                
+                with col2:
+                    quality = study.get("quality", {})
+                    risk_color = {"Low": "green", "Moderate": "orange", "High": "red"}.get(quality.get("risk"), "gray")
+                    st.write("**Quality/Risk of Bias:** ", f":{risk_color}[{quality.get('risk', 'Unknown')}]")
+                    st.write("**Reason:** ", quality.get("reason", "Not provided"))
+                    
+                    # Display any extraction errors or missing data
+                    missing_data = study["data"].get("missing_data", "")
+                    if missing_data:
+                        st.error(f"**Missing Data:** {missing_data}")
+                
+                # Allow editing of extracted data
+                st.subheader("Edit Data")
+                effect_size_input = st.number_input(
+                    "Effect Size", 
+                    value=float(effect_size),
+                    step=0.1,
+                    key=f"effect_{i}"
+                )
+                
+                variance_input = st.number_input(
+                    "Variance", 
+                    value=float(max(0.01, variance)),
+                    min_value=0.01,
+                    step=0.1,
+                    key=f"variance_{i}"
+                )
+                
+                patients_input = st.number_input(
+                    "Number of Patients", 
+                    value=int(study["data"].get("patients", 0)),
+                    min_value=0,
+                    step=1,
+                    key=f"patients_{i}"
+                )
+                
+                # Update the study data when edited
+                if effect_size_input != effect_size or variance_input != variance or patients_input != study["data"].get("patients", 0):
+                    st.session_state.state["extracted_data"][i]["data"]["effect_size"] = effect_size_input
+                    st.session_state.state["extracted_data"][i]["data"]["variance"] = variance_input
+                    st.session_state.state["extracted_data"][i]["data"]["patients"] = patients_input
+                    st.success("Data updated")
+
 if __name__ == "__main__":
     main() 
