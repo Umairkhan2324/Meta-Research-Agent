@@ -391,3 +391,313 @@
 2025-03-03 13:02:52,635 [INFO] _client:1038 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-03 13:02:52,641 [INFO] main:388 - Successfully extracted data from 'Outcomes and Complications of Endoscopic versus Transcranial Approaches for Pituitary Macroadenomas'
 2025-03-03 13:02:52,662 [INFO] main:452 - Human review of extracted data - will be handled by Streamlit
+2025-04-15 00:17:36,481 [INFO] main:91 - Using existing topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:17:36,482 [INFO] main:99 - User provided topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:17:36,483 [INFO] main:109 - Defining PICO with LLM...
+2025-04-15 00:17:39,257 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:39,296 [INFO] main:165 - PICO defined: {'population': 'Patients with trigeminal neuralgia', 'intervention': 'Microvascular decompression', 'comparison': 'Gamma knife radiation', 'outcome': 'Pain relief and complication rates'}
+2025-04-15 00:17:39,297 [INFO] main:181 - Searching for literature on: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:17:39,297 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia Patients with trigeminal neuralgia Microvascular decompression Gamma knife radiation Pain relief and complication rates meta-analysis randomized controlled trial neurosurgery
+2025-04-15 00:17:41,683 [INFO] main:91 - Using existing topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:17:41,683 [INFO] main:99 - User provided topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:17:41,683 [INFO] main:109 - Defining PICO with LLM...
+2025-04-15 00:17:42,209 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia neurosurgery clinical trial Microvascular decompression vs Gamma knife radiation
+2025-04-15 00:17:43,861 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:43,875 [INFO] main:165 - PICO defined: {'population': 'Patients with trigeminal neuralgia', 'intervention': 'Microvascular decompression', 'comparison': 'Gamma knife radiation', 'outcome': 'Pain relief and complication rates'}
+2025-04-15 00:17:43,883 [INFO] main:181 - Searching for literature on: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:17:43,883 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia Patients with trigeminal neuralgia Microvascular decompression Gamma knife radiation Pain relief and complication rates meta-analysis randomized controlled trial neurosurgery
+2025-04-15 00:17:45,349 [INFO] main:239 - Found 20 potentially relevant articles
+2025-04-15 00:17:45,349 [INFO] main:252 - Screening articles...
+2025-04-15 00:17:46,649 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia neurosurgery clinical trial Microvascular decompression vs Gamma knife radiation
+2025-04-15 00:17:47,107 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:47,107 [INFO] main:294 - Excluded: EFNS guidelines on trigeminal neuralgia management
+2025-04-15 00:17:48,407 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:48,832 [INFO] main:239 - Found 20 potentially relevant articles
+2025-04-15 00:17:48,832 [INFO] main:252 - Screening articles...
+2025-04-15 00:17:49,648 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:49,648 [INFO] main:294 - Excluded: LINAC stereotactic radiosurgery for trigeminal neuralgia
+2025-04-15 00:17:51,106 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:51,114 [INFO] main:294 - Excluded: Effectiveness and safety of high-voltage pulsed ...
+2025-04-15 00:17:51,457 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:51,465 [INFO] main:294 - Excluded: EFNS guidelines on trigeminal neuralgia management
+2025-04-15 00:17:52,423 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:52,423 [INFO] main:291 - Included: Trigeminal Neuralgia
+2025-04-15 00:17:53,323 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:53,590 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:53,606 [INFO] main:294 - Excluded: Modern Approaches to the Treatment of Acute Facial Pain
+2025-04-15 00:17:54,614 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:54,623 [INFO] main:294 - Excluded: LINAC stereotactic radiosurgery for trigeminal neuralgia
+2025-04-15 00:17:55,057 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:55,065 [INFO] main:294 - Excluded: Anterior selective targeting for radiosurgical treatment of ...
+2025-04-15 00:17:55,897 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:55,906 [INFO] main:294 - Excluded: Effectiveness and safety of high-voltage pulsed ...
+2025-04-15 00:17:57,313 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:57,313 [INFO] main:291 - Included: Trigeminal Neuralgia
+2025-04-15 00:17:57,905 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:57,922 [INFO] main:294 - Excluded: Trigeminal Neuralgia
+2025-04-15 00:17:58,972 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:17:58,980 [INFO] main:294 - Excluded: The changing face of trigeminal neuralgia&#x02014
+2025-04-15 00:18:00,263 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:00,280 [INFO] main:294 - Excluded: The changing face of trigeminal neuralgia—A narrative review
+2025-04-15 00:18:00,356 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:00,356 [INFO] main:294 - Excluded: Modern Approaches to the Treatment of Acute Facial Pain
+2025-04-15 00:18:01,471 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:01,472 [INFO] main:294 - Excluded: Anterior selective targeting for radiosurgical treatment of ...
+2025-04-15 00:18:01,915 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:01,917 [INFO] main:291 - Included: Efficacy and Safety of Microvascular Decompression ...
+2025-04-15 00:18:03,280 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:03,287 [INFO] main:294 - Excluded: Trigeminal Neuralgia
+2025-04-15 00:18:03,321 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:03,329 [INFO] main:291 - Included: Comparing Microvascular Decompression with Gamma ...
+2025-04-15 00:18:04,538 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:04,546 [INFO] main:294 - Excluded: The changing face of trigeminal neuralgia&#x02014
+2025-04-15 00:18:04,688 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:04,695 [INFO] main:291 - Included: Efficacy of stereotactic gamma knife surgery and ...
+2025-04-15 00:18:05,996 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:05,996 [INFO] main:294 - Excluded: The changing face of trigeminal neuralgia—A narrative review
+2025-04-15 00:18:06,179 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:06,188 [INFO] main:294 - Excluded: Gamma knife surgery for trigeminal neuralgia: outcomes ...
+2025-04-15 00:18:07,213 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:07,213 [INFO] main:291 - Included: Efficacy and Safety of Microvascular Decompression ...
+2025-04-15 00:18:07,963 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:07,979 [INFO] main:294 - Excluded: Microvascular decompression as a second step treatment ...
+2025-04-15 00:18:08,505 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:08,512 [INFO] main:291 - Included: Comparing Microvascular Decompression with Gamma ...
+2025-04-15 00:18:09,305 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:09,312 [INFO] main:291 - Included: Repeat Gamma Knife radiosurgery versus microvascular ...
+2025-04-15 00:18:09,921 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:09,930 [INFO] main:291 - Included: Efficacy of stereotactic gamma knife surgery and ...
+2025-04-15 00:18:11,337 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:11,345 [INFO] main:294 - Excluded: Gamma knife surgery for trigeminal neuralgia: outcomes ...
+2025-04-15 00:18:12,944 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:12,944 [INFO] main:294 - Excluded: Microvascular decompression as a second step treatment ...
+2025-04-15 00:18:14,254 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:14,261 [INFO] main:291 - Included: Repeat Gamma Knife radiosurgery versus microvascular ...
+2025-04-15 00:18:14,620 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:14,628 [INFO] main:294 - Excluded: Gamma Knife Radiosurgery for Trigeminal Neuralgia
+2025-04-15 00:18:15,520 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:15,538 [INFO] main:294 - Excluded: Gamma Knife Radiosurgery for Trigeminal Neuralgia
+2025-04-15 00:18:16,502 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:16,502 [INFO] main:294 - Excluded: Gamma Knife radiosurgery for relapsing trigeminal ...
+2025-04-15 00:18:16,657 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:16,670 [INFO] main:294 - Excluded: Gamma Knife radiosurgery for relapsing trigeminal ...
+2025-04-15 00:18:17,703 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:17,712 [INFO] main:291 - Included: Meta-Analysis on Safety and Efficacy of Microsurgical ...
+2025-04-15 00:18:18,160 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:18,160 [INFO] main:291 - Included: Meta-Analysis on Safety and Efficacy of Microsurgical ...
+2025-04-15 00:18:19,362 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:19,370 [INFO] main:291 - Included: Microvascular Decompression versus Stereotactic ...
+2025-04-15 00:18:19,370 [INFO] main:307 - Selected 7 articles from 20 total.
+2025-04-15 00:18:19,370 [INFO] main:320 - Extracting data from included articles and assessing quality...
+2025-04-15 00:18:23,751 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:24,052 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:24,077 [INFO] main:291 - Included: Microvascular Decompression versus Stereotactic ...
+2025-04-15 00:18:24,077 [INFO] main:307 - Selected 7 articles from 20 total.
+2025-04-15 00:18:24,077 [INFO] main:320 - Extracting data from included articles and assessing quality...
+2025-04-15 00:18:24,435 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:24,993 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:26,293 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:27,177 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:28,277 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:29,175 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:30,017 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:32,368 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:32,483 [INFO] main:476 - Extracted data from 7 articles
+2025-04-15 00:18:32,600 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:32,751 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:32,751 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:33,186 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:33,352 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:18:33,444 [INFO] main:476 - Extracted data from 7 articles
+2025-04-15 00:20:05,243 [INFO] main:91 - Using existing topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:20:05,243 [INFO] main:99 - User provided topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:20:05,243 [INFO] main:109 - Defining PICO with LLM...
+2025-04-15 00:20:07,427 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:07,443 [INFO] main:165 - PICO defined: {'population': 'Patients with trigeminal neuralgia', 'intervention': 'Microvascular decompression', 'comparison': 'Gamma knife radiation', 'outcome': 'Pain relief and complication rates'}
+2025-04-15 00:20:07,443 [INFO] main:181 - Searching for literature on: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:20:07,451 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia Patients with trigeminal neuralgia Microvascular decompression Gamma knife radiation Pain relief and complication rates meta-analysis randomized controlled trial neurosurgery
+2025-04-15 00:20:09,976 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia neurosurgery clinical trial Microvascular decompression vs Gamma knife radiation
+2025-04-15 00:20:12,151 [INFO] main:239 - Found 20 potentially relevant articles
+2025-04-15 00:20:12,151 [INFO] main:252 - Screening articles...
+2025-04-15 00:20:13,593 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:13,601 [INFO] main:294 - Excluded: EFNS guidelines on trigeminal neuralgia management
+2025-04-15 00:20:15,466 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:17,003 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:17,017 [INFO] main:294 - Excluded: LINAC stereotactic radiosurgery for trigeminal neuralgia
+2025-04-15 00:20:21,041 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:21,050 [INFO] main:294 - Excluded: Effectiveness and safety of high-voltage pulsed ...
+2025-04-15 00:20:22,274 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:22,282 [INFO] main:291 - Included: Trigeminal Neuralgia
+2025-04-15 00:20:24,016 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:24,040 [INFO] main:294 - Excluded: Modern Approaches to the Treatment of Acute Facial Pain
+2025-04-15 00:20:25,360 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:25,368 [INFO] main:294 - Excluded: Anterior selective targeting for radiosurgical treatment of ...
+2025-04-15 00:20:26,656 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:26,665 [INFO] main:294 - Excluded: Trigeminal Neuralgia
+2025-04-15 00:20:28,023 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:28,023 [INFO] main:294 - Excluded: The changing face of trigeminal neuralgia&#x02014
+2025-04-15 00:20:29,106 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:29,115 [INFO] main:294 - Excluded: The changing face of trigeminal neuralgia—A narrative review
+2025-04-15 00:20:30,323 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:30,323 [INFO] main:291 - Included: Efficacy and Safety of Microvascular Decompression ...
+2025-04-15 00:20:32,159 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:32,165 [INFO] main:291 - Included: Comparing Microvascular Decompression with Gamma ...
+2025-04-15 00:20:33,348 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:33,357 [INFO] main:291 - Included: Efficacy of stereotactic gamma knife surgery and ...
+2025-04-15 00:20:34,822 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:34,822 [INFO] main:294 - Excluded: Gamma knife surgery for trigeminal neuralgia: outcomes ...
+2025-04-15 00:20:36,496 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:36,499 [INFO] main:294 - Excluded: Microvascular decompression as a second step treatment ...
+2025-04-15 00:20:37,672 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:37,672 [INFO] main:291 - Included: Repeat Gamma Knife radiosurgery versus microvascular ...
+2025-04-15 00:20:39,222 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:39,238 [INFO] main:294 - Excluded: Gamma Knife Radiosurgery for Trigeminal Neuralgia
+2025-04-15 00:20:41,497 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:41,515 [INFO] main:294 - Excluded: Gamma Knife radiosurgery for relapsing trigeminal ...
+2025-04-15 00:20:42,962 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:42,971 [INFO] main:291 - Included: Meta-Analysis on Safety and Efficacy of Microsurgical ...
+2025-04-15 00:20:44,237 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:44,237 [INFO] main:291 - Included: Microvascular Decompression versus Stereotactic ...
+2025-04-15 00:20:44,237 [INFO] main:307 - Selected 7 articles from 20 total.
+2025-04-15 00:20:44,237 [INFO] main:320 - Extracting data from included articles and assessing quality...
+2025-04-15 00:20:49,269 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:49,895 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:50,303 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:50,661 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:50,744 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:51,703 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:51,770 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:20:51,886 [INFO] main:476 - Extracted data from 7 articles
+2025-04-15 00:22:57,636 [INFO] main:91 - Using existing topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:22:57,637 [INFO] main:99 - User provided topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:22:57,638 [INFO] main:109 - Defining PICO with LLM...
+2025-04-15 00:22:58,957 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:22:58,965 [INFO] main:165 - PICO defined: {'population': 'Patients with trigeminal neuralgia', 'intervention': 'Microvascular decompression', 'comparison': 'Gamma knife radiation', 'outcome': 'Pain relief and quality of life improvement'}
+2025-04-15 00:22:58,965 [INFO] main:181 - Searching for literature on: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:22:58,965 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia Patients with trigeminal neuralgia Microvascular decompression Gamma knife radiation Pain relief and quality of life improvement meta-analysis randomized controlled trial neurosurgery
+2025-04-15 00:23:01,648 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia neurosurgery clinical trial Microvascular decompression vs Gamma knife radiation
+2025-04-15 00:23:04,174 [INFO] main:203 - Executing search query: Patients with trigeminal neuralgia Pain relief and quality of life improvement Microvascular decompression neurosurgical management
+2025-04-15 00:23:06,906 [INFO] main:239 - Found 20 potentially relevant articles
+2025-04-15 00:23:06,906 [INFO] main:252 - Screening articles...
+2025-04-15 00:23:08,632 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:08,632 [INFO] main:291 - Included: Efficacy and Safety of Microvascular Decompression ...
+2025-04-15 00:23:09,897 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:09,897 [INFO] main:294 - Excluded: Repeat radiosurgery for idiopathic trigeminal neuralgia
+2025-04-15 00:23:11,505 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:11,505 [INFO] main:294 - Excluded: Clinical outcomes of 114 patients who underwent Gamma ...
+2025-04-15 00:23:12,622 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:12,622 [INFO] main:294 - Excluded: Trigeminal neuralgia pain relief after gamma knife ...
+2025-04-15 00:23:14,696 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:14,715 [INFO] main:294 - Excluded: Preliminary results of 45 patients with trigeminal neuralgia ...
+2025-04-15 00:23:16,038 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:16,046 [INFO] main:294 - Excluded: Radiosurgery Radiation induced vascular injury after ...
+2025-04-15 00:23:17,015 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:17,021 [INFO] main:294 - Excluded: Long-Term Outcome of Gamma Knife Radiosurgery for ...
+2025-04-15 00:23:18,351 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:18,351 [INFO] main:294 - Excluded: Impact of Radiation Dose and Anatomic Target on Patient ...
+2025-04-15 00:23:20,343 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:20,343 [INFO] main:294 - Excluded: Salvage Gamma Knife Stereotactic Radiosurgery for ...
+2025-04-15 00:23:21,846 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:21,862 [INFO] main:294 - Excluded: Predictive Nomogram for the Durability of Pain Relief From ...
+2025-04-15 00:23:23,665 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:23,681 [INFO] main:291 - Included: Comparing Microvascular Decompression with Gamma ...
+2025-04-15 00:23:25,170 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:25,170 [INFO] main:291 - Included: Efficacy of stereotactic gamma knife surgery and ...
+2025-04-15 00:23:26,683 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:26,683 [INFO] main:294 - Excluded: Gamma knife surgery for trigeminal neuralgia: outcomes ...
+2025-04-15 00:23:28,713 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:28,729 [INFO] main:294 - Excluded: Microvascular decompression as a second step treatment ...
+2025-04-15 00:23:29,996 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:29,996 [INFO] main:291 - Included: Repeat Gamma Knife radiosurgery versus microvascular ...
+2025-04-15 00:23:31,244 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:31,246 [INFO] main:294 - Excluded: Gamma Knife Radiosurgery for Trigeminal Neuralgia
+2025-04-15 00:23:32,813 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:32,813 [INFO] main:294 - Excluded: Gamma Knife radiosurgery for relapsing trigeminal ...
+2025-04-15 00:23:33,995 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:33,995 [INFO] main:291 - Included: Meta-Analysis on Safety and Efficacy of Microsurgical ...
+2025-04-15 00:23:35,673 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:35,689 [INFO] main:291 - Included: Microvascular Decompression versus Stereotactic ...
+2025-04-15 00:23:37,295 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:37,301 [INFO] main:294 - Excluded: Clinical Depression and Anxiety Are Relieved by ...
+2025-04-15 00:23:37,301 [INFO] main:307 - Selected 6 articles from 20 total.
+2025-04-15 00:23:37,301 [INFO] main:320 - Extracting data from included articles and assessing quality...
+2025-04-15 00:23:42,575 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:42,942 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:43,085 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:43,258 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:43,875 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:45,600 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:23:45,766 [INFO] main:476 - Extracted data from 6 articles
+2025-04-15 00:23:59,979 [INFO] main:540 - Performing meta-analysis...
+2025-04-15 00:23:59,979 [INFO] main:593 - Found 6 valid studies for meta-analysis.
+2025-04-15 00:23:59,997 [INFO] main:725 - Meta-analysis completed using fixed effects model. Pooled effect: 0.000
+2025-04-15 00:23:59,998 [INFO] main:776 - Drafting report with LLM...
+2025-04-15 00:24:15,037 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:24:15,037 [INFO] main:905 - Report drafted with specialty-specific content.
+2025-04-15 00:27:30,798 [INFO] main:91 - Using existing topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:27:30,798 [INFO] main:99 - User provided topic: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:27:30,805 [INFO] main:109 - Defining PICO with LLM...
+2025-04-15 00:27:33,580 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:33,588 [INFO] main:165 - PICO defined: {'population': 'Patients with trigeminal neuralgia', 'intervention': 'Microvascular decompression', 'comparison': 'Gamma knife radiation', 'outcome': 'Pain relief and quality of life improvement'}
+2025-04-15 00:27:33,588 [INFO] main:181 - Searching for literature on: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia
+2025-04-15 00:27:33,588 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia Patients with trigeminal neuralgia Microvascular decompression Gamma knife radiation Pain relief and quality of life improvement meta-analysis randomized controlled trial neurosurgery
+2025-04-15 00:27:35,646 [INFO] main:203 - Executing search query: Microvascular decompression vs. gamma knife radiation for trigeminal neuralgia neurosurgery clinical trial Microvascular decompression vs Gamma knife radiation
+2025-04-15 00:27:37,763 [INFO] main:203 - Executing search query: Patients with trigeminal neuralgia Pain relief and quality of life improvement Microvascular decompression neurosurgical management
+2025-04-15 00:27:40,720 [INFO] main:239 - Found 20 potentially relevant articles
+2025-04-15 00:27:40,720 [INFO] main:252 - Screening articles...
+2025-04-15 00:27:42,763 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:42,768 [INFO] main:291 - Included: Efficacy and Safety of Microvascular Decompression ...
+2025-04-15 00:27:44,129 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:44,137 [INFO] main:294 - Excluded: Repeat radiosurgery for idiopathic trigeminal neuralgia
+2025-04-15 00:27:45,836 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:45,853 [INFO] main:294 - Excluded: Clinical outcomes of 114 patients who underwent Gamma ...
+2025-04-15 00:27:47,078 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:47,086 [INFO] main:294 - Excluded: Trigeminal neuralgia pain relief after gamma knife ...
+2025-04-15 00:27:48,544 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:48,552 [INFO] main:294 - Excluded: Preliminary results of 45 patients with trigeminal neuralgia ...
+2025-04-15 00:27:50,127 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:50,127 [INFO] main:294 - Excluded: Radiosurgery Radiation induced vascular injury after ...
+2025-04-15 00:27:51,677 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:51,685 [INFO] main:294 - Excluded: Long-Term Outcome of Gamma Knife Radiosurgery for ...
+2025-04-15 00:27:53,193 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:53,193 [INFO] main:294 - Excluded: Impact of Radiation Dose and Anatomic Target on Patient ...
+2025-04-15 00:27:54,843 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:54,852 [INFO] main:294 - Excluded: Salvage Gamma Knife Stereotactic Radiosurgery for ...
+2025-04-15 00:27:56,584 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:56,593 [INFO] main:294 - Excluded: Predictive Nomogram for the Durability of Pain Relief From ...
+2025-04-15 00:27:58,276 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:58,276 [INFO] main:291 - Included: Comparing Microvascular Decompression with Gamma ...
+2025-04-15 00:27:59,542 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:27:59,542 [INFO] main:291 - Included: Efficacy of stereotactic gamma knife surgery and ...
+2025-04-15 00:28:01,475 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:01,484 [INFO] main:294 - Excluded: Gamma knife surgery for trigeminal neuralgia: outcomes ...
+2025-04-15 00:28:02,927 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:02,935 [INFO] main:294 - Excluded: Microvascular decompression as a second step treatment ...
+2025-04-15 00:28:03,968 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:03,975 [INFO] main:291 - Included: Repeat Gamma Knife radiosurgery versus microvascular ...
+2025-04-15 00:28:05,326 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:05,334 [INFO] main:294 - Excluded: Gamma Knife Radiosurgery for Trigeminal Neuralgia
+2025-04-15 00:28:07,458 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:07,458 [INFO] main:294 - Excluded: Gamma Knife radiosurgery for relapsing trigeminal ...
+2025-04-15 00:28:09,724 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:09,732 [INFO] main:291 - Included: Meta-Analysis on Safety and Efficacy of Microsurgical ...
+2025-04-15 00:28:11,349 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:11,349 [INFO] main:291 - Included: Microvascular Decompression versus Stereotactic ...
+2025-04-15 00:28:13,040 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:13,058 [INFO] main:294 - Excluded: Clinical Depression and Anxiety Are Relieved by ...
+2025-04-15 00:28:13,066 [INFO] main:307 - Selected 6 articles from 20 total.
+2025-04-15 00:28:13,067 [INFO] main:320 - Extracting data from included articles and assessing quality...
+2025-04-15 00:28:18,439 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:18,522 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:18,914 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:21,031 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:23,556 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:25,154 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:28:25,382 [INFO] main:476 - Extracted data from 6 articles
+2025-04-15 00:29:53,729 [INFO] main:540 - Performing meta-analysis...
+2025-04-15 00:29:53,730 [INFO] main:593 - Found 6 valid studies for meta-analysis.
+2025-04-15 00:29:53,732 [INFO] main:725 - Meta-analysis completed using fixed effects model. Pooled effect: 0.000
+2025-04-15 00:29:53,735 [INFO] main:776 - Drafting report with LLM...
+2025-04-15 00:30:07,687 [INFO] _client:1013 - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-15 00:30:07,691 [INFO] main:905 - Report drafted with specialty-specific content.
+2025-04-15 00:30:21,398 [INFO] main:1066 - Enhanced final report saved as final_report.pdf

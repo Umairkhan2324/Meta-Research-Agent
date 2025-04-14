@@ -95,20 +95,34 @@ def main():
         if st.button("Submit Topic") and len(topic) > 10:
             with st.spinner("Processing topic..."):
                 st.session_state.state['topic'] = topic
+                
+                # Rebuild the graph to ensure proper initialization
+                from main import workflow
                 graph = workflow.compile()
                 
-                # Run the workflow until human intervention is needed
-                current_state = st.session_state.state.copy()
-                current_state = graph.invoke(
-                    current_state,
-                    {
-                        "recursion_limit": 25, 
-                        "list_recursion_limit": 40,
-                        "run_to_node": "human_review_extraction"
-                    }
-                )
-                st.session_state.state = current_state
-                st.rerun()
+                try:
+                    # Run the first part of the workflow
+                    current_state = st.session_state.state.copy()
+                    
+                    # Process each step manually to avoid execution errors
+                    from main import get_user_topic, define_pico, search_literature, screen_articles, extract_and_assess
+                    
+                    # Step by step manual execution to avoid graph errors
+                    current_state = get_user_topic(current_state)
+                    current_state = define_pico(current_state)
+                    current_state = search_literature(current_state)
+                    current_state = screen_articles(current_state)
+                    current_state = extract_and_assess(current_state)
+                    
+                    # Set the stage to extraction_completed
+                    current_state["stage"] = "extraction_completed"
+                    st.session_state.state = current_state
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Workflow error: {str(e)}")
+                    import traceback
+                    st.text(traceback.format_exc())
+                    st.session_state.state.setdefault("errors", []).append(f"Workflow error: {str(e)}")
     
     # Display PICO
     if st.session_state.state.get('pico'):
@@ -255,34 +269,41 @@ def main():
                 st.session_state.state["human_approval"] = "yes"
                 
                 with st.spinner("Generating final PDF..."):
-                    # Create a simple pdf generation graph
-                    from main import StateGraph, END, ResearchState, generate_pdf
-                    
-                    pdf_workflow = StateGraph(ResearchState)
-                    pdf_workflow.add_node("generate_pdf", generate_pdf)
-                    pdf_workflow.set_entry_point("generate_pdf")
-                    pdf_workflow.add_edge("generate_pdf", END)
-                    
-                    # Compile and run
-                    pdf_graph = pdf_workflow.compile()
-                    
                     try:
-                        result_state = pdf_graph.invoke(st.session_state.state.copy())
-                        st.session_state.state = result_state
+                        # Import the generate_pdf function directly
+                        from main import generate_pdf
                         
-                        st.success("PDF generated!")
-                        try:
-                            with open("final_report.pdf", "rb") as f:
-                                st.download_button(
-                                    label="Download PDF Report",
-                                    data=f,
-                                    file_name="neurosurgery_meta_analysis.pdf",
-                                    mime="application/pdf"
-                                )
-                        except Exception as file_error:
-                            st.error(f"PDF file error: {str(file_error)}")
+                        # Create a copy of the current state
+                        current_state = st.session_state.state.copy()
+                        
+                        # Call generate_pdf directly
+                        st.info("Generating PDF report...")
+                        current_state = generate_pdf(current_state)
+                        
+                        # Update session state
+                        st.session_state.state = current_state
+                        
+                        if current_state["stage"] == "pdf_generated":
+                            st.success("PDF generated successfully!")
+                            try:
+                                with open("final_report.pdf", "rb") as f:
+                                    pdf_bytes = f.read()
+                                    st.download_button(
+                                        label="Download PDF Report",
+                                        data=pdf_bytes,
+                                        file_name="neurosurgery_meta_analysis.pdf",
+                                        mime="application/pdf"
+                                    )
+                            except Exception as file_error:
+                                st.error(f"PDF file error: {str(file_error)}")
+                        else:
+                            st.error("PDF generation failed.")
                     except Exception as e:
                         st.error(f"PDF generation error: {str(e)}")
+                        import traceback
+                        tb = traceback.format_exc()
+                        st.session_state.state.setdefault("errors", []).append(f"PDF error: {str(e)}")
+                        st.text(tb)
                 
         with col2:
             if st.button("Reject Report"):
@@ -432,6 +453,52 @@ def main():
                     st.session_state.state["extracted_data"][i]["data"]["variance"] = variance_input
                     st.session_state.state["extracted_data"][i]["data"]["patients"] = patients_input
                     st.success("Data updated")
+
+        # Add approval buttons for extraction_completed stage
+        st.markdown("---")
+        st.subheader("Data Extraction Review")
+        
+        # Create columns for the buttons
+        approve_col1, approve_col2 = st.columns(2)
+        
+        with approve_col1:
+            if st.button("Approve Extracted Data and Continue", key="approve_extraction"):
+                try:
+                    st.session_state.state["human_approval"] = "yes"
+                    st.session_state.state["stage"] = "review_extracted"
+                    
+                    with st.spinner("Running meta-analysis and generating visualizations..."):
+                        # Import required functions
+                        from main import perform_meta_analysis, generate_visualizations, draft_report
+                        
+                        # Create a copy of the current state
+                        current_state = st.session_state.state.copy()
+                        
+                        # Call functions directly in sequence instead of using LangGraph
+                        st.info("Performing meta-analysis...")
+                        current_state = perform_meta_analysis(current_state)
+                        
+                        st.info("Generating visualizations...")
+                        current_state = generate_visualizations(current_state)
+                        
+                        st.info("Drafting report...")
+                        current_state = draft_report(current_state)
+                        
+                        # Update session state
+                        current_state["stage"] = "review_report"
+                        st.session_state.state = current_state
+                        st.rerun()
+                except Exception as e:
+                    st.error(f"Error processing meta-analysis: {str(e)}")
+                    import traceback
+                    tb = traceback.format_exc()
+                    st.session_state.state.setdefault("errors", []).append(f"Meta-analysis error: {str(e)}")
+                    st.text(tb)  # Show stack trace for debugging
+        
+        with approve_col2:
+            if st.button("Reject Data and Start Over", key="reject_extraction"):
+                st.session_state.state["human_approval"] = "no"
+                st.warning("Data extraction rejected. Please modify search criteria or edit extracted data.")
 
 if __name__ == "__main__":
     main() 
